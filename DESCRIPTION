@@ -1,0 +1,27 @@
+Package: starwars
+Title: Relational Data from the Star Wars API for Learning and
+    Teaching
+Version: 0.0.1
+Authors@R: 
+    person(given = "Garrick",
+           family = "Aden-Buie",
+           role = c("aut", "cre"),
+           email = "garrick@adenbuie.com",
+           comment = c(ORCID = "0000-0002-7111-0077"))
+Description: Provides data about the Star Wars movie franchise
+    in a set of relational tables or as a complete 'DuckDB' database. All
+    data was collected from the open source 'Star Wars API'.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
+Imports:
+    dm,
+    duckdb,
+    magrittr,
+    tibble
+Suggests: 
+    rwars
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
