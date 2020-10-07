@@ -36,7 +36,7 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the released version of starwars from GitHub.
+You can install `starwars` from GitHub with [remotes](https://remotes.r-lib.org):
 
 ``` r
 # install.packages("remotes")

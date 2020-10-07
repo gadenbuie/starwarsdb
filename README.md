@@ -18,7 +18,8 @@ tables, or as an in-package DuckDB database.
 
 ## Installation
 
-You can install the released version of starwars from GitHub.
+You can install `starwars` from GitHub with
+[remotes](https://remotes.r-lib.org):
 
 ``` r
 # install.packages("remotes")
@@ -166,7 +167,7 @@ data frames into a complete relational data model.
 ``` r
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ────────────────────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 57
 #> Primary keys: 5
