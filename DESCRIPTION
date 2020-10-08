@@ -1,7 +1,7 @@
 Package: starwars
 Title: Relational Data from the Star Wars API for Learning and
     Teaching
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Garrick",
            family = "Aden-Buie",
