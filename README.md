@@ -165,17 +165,35 @@ Finally, `starwars` provides a function that returns a pre-configured
 data frames into a complete relational data model.
 
 ``` r
+library(dm, warn.conflicts = FALSE)
+
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ───────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 57
 #> Primary keys: 5
 #> Foreign keys: 10
+
+sw_dm %>%
+  dm_select_tbl(pilots, people) %>%
+  dm_filter("pilots", vehicle == "X-wing") %>%
+  dm_apply_filters() %>%
+  dm_zoom_to("people") %>%
+  semi_join(pilots)
+#> # Zoomed table: people
+#> # A tibble:     4 x 10
+#>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
+#>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
+#> 1 Luke…    172    77 blond      fair       blue              19 male   Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 male   Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 male   Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA male   Bestine …
+#> # … with 1 more variable: species <chr>
 ```
 
 ``` r
-dm::dm_draw(sw_dm)
+dm_draw(sw_dm)
 ```
 
 <img src="man/figures/README-starwars-data-model-1.png" width="100%" />

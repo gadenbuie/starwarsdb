@@ -109,13 +109,22 @@ people_rmt %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 Finally, `starwars` provides a function that returns a pre-configured [dm] object.
 The `dm` package wraps local data frames into a complete relational data model.
 
-```{r}
+```{r dm-tables}
+library(dm, warn.conflicts = FALSE)
+
 sw_dm <- starwars_dm()
 sw_dm
+
+sw_dm %>%
+  dm_select_tbl(pilots, people) %>%
+  dm_filter("pilots", vehicle == "X-wing") %>%
+  dm_apply_filters() %>%
+  dm_zoom_to("people") %>%
+  semi_join(pilots)
 ```
 
 ```{r starwars-data-model}
-dm::dm_draw(sw_dm)
+dm_draw(sw_dm)
 ```
 
 ## API

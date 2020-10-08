@@ -38,23 +38,23 @@ starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
 #' @export
 starwars_dm_configure <- function(dm) {
   dm %>%
-    dm::dm_add_pk(films, title) %>%
-    dm::dm_add_pk(people, name) %>%
-    dm::dm_add_pk(planets, name) %>%
-    dm::dm_add_pk(species, name) %>%
-    dm::dm_add_pk(vehicles, name) %>%
-    dm::dm_add_fk(films_people, title, films) %>%
-    dm::dm_add_fk(films_people, character, people) %>%
-    dm::dm_add_fk(films_planets, title, films) %>%
-    dm::dm_add_fk(films_planets, planet, planets) %>%
-    dm::dm_add_fk(films_vehicles, title, films) %>%
-    dm::dm_add_fk(films_vehicles, vehicle, vehicles) %>%
-    dm::dm_add_fk(pilots, pilot, people) %>%
-    dm::dm_add_fk(pilots, vehicle, vehicles) %>%
-    dm::dm_add_fk(people, species, species) %>%
-    dm::dm_add_fk(people, homeworld, planets) %>%
+    dm::dm_add_pk("films", "title") %>%
+    dm::dm_add_pk("people", "name") %>%
+    dm::dm_add_pk("planets", "name") %>%
+    dm::dm_add_pk("species", "name") %>%
+    dm::dm_add_pk("vehicles", "name") %>%
+    dm::dm_add_fk("films_people", "title", "films") %>%
+    dm::dm_add_fk("films_people", "character", "people") %>%
+    dm::dm_add_fk("films_planets", "title", "films") %>%
+    dm::dm_add_fk("films_planets", "planet", "planets") %>%
+    dm::dm_add_fk("films_vehicles", "title", "films") %>%
+    dm::dm_add_fk("films_vehicles", "vehicle", "vehicles") %>%
+    dm::dm_add_fk("pilots", "pilot", "people") %>%
+    dm::dm_add_fk("pilots", "vehicle", "vehicles") %>%
+    dm::dm_add_fk("people", "species", "species") %>%
+    dm::dm_add_fk("people", "homeworld", "planets") %>%
     dm::dm_set_colors(
-      "#C2C7B5" = starts_with("films"),
+      "#C2C7B5" = paste0("films", c("", "_people", "_planets", "_vehicles")),
       "#6E989B" = c("people", "pilots"),
       "#BC8258" = "species",
       "#71503E" = "vehicles",
