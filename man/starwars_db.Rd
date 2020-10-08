@@ -9,20 +9,46 @@
 starwars_connect()
 
 starwars_disconnect(con)
+
+starwars_db()
 }
 \arguments{
 \item{con}{A connection to the Star Wars database}
 }
 \value{
-A connection to the Star Wars database
+A connection to the Star Wars database, or the path to the database.
 }
 \description{
 Provides a connection to a DuckDB database of the Star Wars data.
+Alternatively, you can use \code{starwars_db()} to manually connect to the
+database using \code{\link[DBI:dbConnect]{DBI::dbConnect()}} and \code{\link[duckdb:duckdb]{duckdb::duckdb()}}.
 }
 \section{Functions}{
 \itemize{
 \item \code{starwars_connect}: Connect to the DuckDB database
 
 \item \code{starwars_disconnect}: Disconnect from the DuckDB database
+
+\item \code{starwars_db}: Returns the path to the stwarwars database
 }}
 
+\examples{
+# Manually connect using {duckdb} and {DBI}
+con <- DBI::dbConnect(
+  duckdb::duckdb(),
+  dbdir = starwars_db(),
+  read_only = TRUE
+)
+dplyr::tbl(con, "films")
+
+# Disconnect from that database (shutdown is specific to duckdb)
+DBI::dbDisconnect(con, shutdown = TRUE)
+
+# Or connect without worrying about connection details
+con <- starwars_connect()
+dplyr::tbl(con, "films")
+
+# Similarly, disconnect quickly without worrying about duckdb arguments
+starwars_disconnect(con)
+
+}

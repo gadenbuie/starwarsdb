@@ -2,6 +2,7 @@
 
 export("%>%")
 export(starwars_connect)
+export(starwars_db)
 export(starwars_disconnect)
 export(starwars_dm)
 export(starwars_dm_configure)
