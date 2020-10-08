@@ -71,7 +71,7 @@ schema
 
 ```{r}
 schema %>% 
-  filter(dataset == "films") %>% 
+  filter(endpoint == "films") %>% 
   pull(properties)
 ```
 

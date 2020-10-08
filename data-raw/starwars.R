@@ -18,13 +18,13 @@ schema <-
       list()
     schema[c("title", "description", "properties")]
   }) %>%
-  map_dfr(as_tibble, .id = "dataset") %>%
-  rename(dataset_title = title, dataset_description = description)
+  map_dfr(as_tibble, .id = "endpoint") %>%
+  rename(endpoint_title = title, endpoint_description = description)
 
-row_vehicles <- which(schema$dataset == "vehicles")
-row_starships <- which(schema$dataset == "starships")
+row_vehicles <- which(schema$endpoint == "vehicles")
+row_starships <- which(schema$endpoint == "starships")
 
-schema$dataset_description[[row_vehicles]] <- "A Starship or vehicle"
+schema$endpoint_description[[row_vehicles]] <- "A Starship or vehicle"
 schema$properties[[row_vehicles]] <-
   bind_rows(schema$properties[[row_vehicles]], schema$properties[[row_starships]]) %>%
   group_by(variable) %>%
