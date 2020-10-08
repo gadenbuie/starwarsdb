@@ -17,13 +17,14 @@ knitr::opts_chunk$set(
 [rwars]: https://github.com/Ironholds/rwars
 [dbplyr]: https://dbplyr.tidyverse.org/
 [dm]: https://krlmlr.github.io/dm/
+[duckdb]: https://duckdb.org
 
 # starwars
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-`starwars` provides data from the Star Wars API as a set of relational tables, or as an in-package DuckDB database.
+`starwars` provides data from the [Star Wars API][swapi] as a set of relational tables, or as an in-package [DuckDB] database.
 
 ![](`r knitr::fig_chunk("starwars-data-model", "png")`)
 
@@ -42,6 +43,9 @@ You can install `starwars` from GitHub with [remotes](https://remotes.r-lib.org)
 # install.packages("remotes")
 
 remotes::install_github("gadenbuie/starwars")
+
+# For remotes <= 2.1.0
+remotes::install_github("gadenbuie/starwars@main")
 ```
 
 ## Star Wars Data

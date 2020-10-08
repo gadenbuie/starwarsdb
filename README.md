@@ -7,8 +7,9 @@
 
 <!-- badges: end -->
 
-`starwars` provides data from the Star Wars API as a set of relational
-tables, or as an in-package DuckDB database.
+`starwars` provides data from the [Star Wars API](https://swapi.dev) as
+a set of relational tables, or as an in-package
+[DuckDB](https://duckdb.org) database.
 
 ![](man/figures/README-starwars-data-model-1.png)
 
@@ -25,6 +26,9 @@ You can install `starwars` from GitHub with
 # install.packages("remotes")
 
 remotes::install_github("gadenbuie/starwars")
+
+# For remotes <= 2.1.0
+remotes::install_github("gadenbuie/starwars@main")
 ```
 
 ## Star Wars Data
@@ -169,7 +173,7 @@ library(dm, warn.conflicts = FALSE)
 
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ───────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 57
 #> Primary keys: 5
