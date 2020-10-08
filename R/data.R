@@ -137,3 +137,25 @@
 #'   \item{\code{vehicle}}{The name of the vehicle that appeared in the film.}
 #' }
 "films_vehicles"
+
+
+
+#' Star Wars Data Schema
+#'
+#' Includes information about the schema of the tables that were sourced from
+#' [SWAPI](https://swapi.dev), the _Star Wars API_. Not all properties returned
+#' from the API are columns in the data in this package: some properties were
+#' refactored into separate tables. For example, I combined the `starships/`
+#' and `vehicles/` endpoint into a single table. Both API endpoints returned a
+#' "pilots" property, which is described in the schema as an array of people
+#' who piloted the vehicle. The information in this property has been extracted
+#' into a separate table called `pilots` in the \pkg{starwars} package.
+#'
+#' @format A data frame with 5 rows and 4 variables:
+#' \describe{
+#'   \item{\code{endpoint}}{The name of the SWAPI endpoint.}
+#'   \item{\code{endpoint_title}}{The title of the SWAPI endpoint.}
+#'   \item{\code{endpoint_description}}{The description of the SWAPI endpoint.}
+#'   \item{\code{properties}}{The properties of the endpoint as a nested table containing the `variable`, the data `type`, a `description` and the `format` of the property.}
+#' }
+"schema"
