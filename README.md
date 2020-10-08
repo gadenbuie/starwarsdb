@@ -48,18 +48,18 @@ sourced from [SWAPI](https://swapi.dev).
 ``` r
 schema
 #> # A tibble: 5 x 4
-#>   dataset  dataset_title dataset_description                    properties      
-#>   <chr>    <chr>         <chr>                                  <list>          
-#> 1 films    Film          A Star Wars film                       <tibble [14 × 4…
-#> 2 vehicles Starship      A Starship or vehicle                  <tibble [19 × 4…
-#> 3 species  People        A species within the Star Wars univer… <tibble [15 × 4…
-#> 4 planets  Planet        A planet.                              <tibble [14 × 4…
-#> 5 people   People        A person within the Star Wars universe <tibble [16 × 4…
+#>   endpoint endpoint_title endpoint_description                  properties      
+#>   <chr>    <chr>          <chr>                                 <list>          
+#> 1 films    Film           A Star Wars film                      <tibble [14 × 4…
+#> 2 vehicles Starship       A Starship or vehicle                 <tibble [19 × 4…
+#> 3 species  People         A species within the Star Wars unive… <tibble [15 × 4…
+#> 4 planets  Planet         A planet.                             <tibble [14 × 4…
+#> 5 people   People         A person within the Star Wars univer… <tibble [16 × 4…
 ```
 
 ``` r
 schema %>% 
-  filter(dataset == "films") %>% 
+  filter(endpoint == "films") %>% 
   pull(properties)
 #> [[1]]
 #> # A tibble: 14 x 4
@@ -169,7 +169,7 @@ library(dm, warn.conflicts = FALSE)
 
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ───────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ─────────────────────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 57
 #> Primary keys: 5
