@@ -24,4 +24,7 @@ planets
 \description{
 Planets in the Star Wars universe.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}

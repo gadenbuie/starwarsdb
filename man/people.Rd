@@ -25,4 +25,7 @@ people
 \description{
 Characters within the Star Wars universe.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}

@@ -29,4 +29,7 @@ vehicles
 \description{
 A Starship or vehicle in the Star Wars universe.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}

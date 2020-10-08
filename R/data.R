@@ -3,6 +3,7 @@
 #'
 #' Films in the Star Wars movie franchise.
 #'
+#' @template swapi
 #' @format A data frame with 6 rows and 6 variables:
 #' \describe{
 #'   \item{\code{title}}{The title of this film.}
@@ -18,6 +19,7 @@
 #'
 #' Characters within the Star Wars universe.
 #'
+#' @template swapi
 #' @format A data frame with 82 rows and 10 variables:
 #' \describe{
 #'   \item{\code{name}}{The name of this person.}
@@ -38,6 +40,7 @@
 #'
 #' Planets in the Star Wars universe.
 #'
+#' @template swapi
 #' @format A data frame with 59 rows and 9 variables:
 #' \describe{
 #'   \item{\code{name}}{The name of this planet.}
@@ -56,6 +59,7 @@
 #'
 #' Species within the Star Wars universe.
 #'
+#' @template swapi
 #' @format A data frame with 37 rows and 10 variables:
 #' \describe{
 #'   \item{\code{name}}{The name of this species.}
@@ -75,6 +79,7 @@
 #'
 #' A Starship or vehicle in the Star Wars universe.
 #'
+#' @template swapi
 #' @format A data frame with 75 rows and 14 variables:
 #' \describe{
 #'   \item{\code{name}}{The name of this vehicle. The common name, such as Sand Crawler.}
@@ -98,6 +103,7 @@
 #'
 #' Links `people` to the `vehicles` they have piloted.
 #'
+#' @template swapi
 #' @format A data frame with 43 rows and 2 variables:
 #' \describe{
 #'   \item{\code{pilot}}{The name of the person who piloted the vehicle.}
@@ -109,6 +115,7 @@
 #'
 #' Links characters (`people`) to the `films` in which they appear.
 #'
+#' @template swapi
 #' @format A data frame with 162 rows and 2 variables:
 #' \describe{
 #'   \item{\code{title}}{The title of the film.}
@@ -120,6 +127,7 @@
 #'
 #' Links `planets` to the `films` in which they appear.
 #'
+#' @template swapi
 #' @format A data frame with 33 rows and 2 variables:
 #' \describe{
 #'   \item{\code{title}}{The title of the film.}
@@ -131,6 +139,7 @@
 #'
 #' Links `vehicles` to the `films` in which they appear
 #'
+#' @template swapi
 #' @format A data frame with 104 rows and 2 variables:
 #' \describe{
 #'   \item{\code{title}}{The title of the film.}
@@ -151,6 +160,7 @@
 #' who piloted the vehicle. The information in this property has been extracted
 #' into a separate table called `pilots` in the \pkg{starwars} package.
 #'
+#' @template swapi
 #' @format A data frame with 5 rows and 4 variables:
 #' \describe{
 #'   \item{\code{endpoint}}{The name of the SWAPI endpoint.}

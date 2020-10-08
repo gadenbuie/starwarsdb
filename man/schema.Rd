@@ -26,4 +26,7 @@ and \verb{vehicles/} endpoint into a single table. Both API endpoints returned a
 who piloted the vehicle. The information in this property has been extracted
 into a separate table called \code{pilots} in the \pkg{starwars} package.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}

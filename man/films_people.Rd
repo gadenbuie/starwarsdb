@@ -17,4 +17,7 @@ films_people
 \description{
 Links characters (\code{people}) to the \code{films} in which they appear.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}

@@ -25,4 +25,7 @@ species
 \description{
 Species within the Star Wars universe.
 }
+\references{
+\url{https://swapi.dev/}
+}
 \keyword{datasets}
