@@ -3,3 +3,7 @@
 ^data-raw$
 ^README\.Rmd$
 ^LICENSE\.md$
+^cran-comments\.md$
+^\.ccache$
+^\.github$
+^tic\.R$
