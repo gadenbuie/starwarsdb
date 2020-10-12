@@ -1,6 +1,6 @@
 #' Create a Star Wars Data Model Object
 #'
-#' Creates a \pkg{dm} object with the starwars tables.
+#' Creates a \pkg{dm} object with the starwarsdb tables.
 #'
 #' @param configure_dm If `TRUE` (default) the returned \pkg{dm} object is
 #'   completely configured with all of the primary and foreign keys. Set to
@@ -10,6 +10,13 @@
 #'
 #' @return A \pkg{dm} object
 #'
+#' @examples
+#' # Create a full starwars {dm} object from local tables
+#' starwars_dm(remote = TRUE)
+#'
+#' # Create a base starwars {dm} object from remote tables wihout keys
+#' starwars_dm(configure_dm = FALSE, remote = TRUE)
+#'
 #' @seealso [dm::dm()], [dm::dm_add_pk()], [dm::dm_add_fk()], [dm::dm_from_src()]
 #' @export
 starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
@@ -17,15 +24,15 @@ starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
     dm::dm_from_src(starwars_connect())
   } else {
     dm::dm(
-      films = starwars::films,
-      people = starwars::people,
-      planets = starwars::planets,
-      species = starwars::species,
-      vehicles = starwars::vehicles,
-      pilots = starwars::pilots,
-      films_people = starwars::films_people,
-      films_planets = starwars::films_planets,
-      films_vehicles = starwars::films_vehicles
+      films = starwarsdb::films,
+      people = starwarsdb::people,
+      planets = starwarsdb::planets,
+      species = starwarsdb::species,
+      vehicles = starwarsdb::vehicles,
+      pilots = starwarsdb::pilots,
+      films_people = starwarsdb::films_people,
+      films_planets = starwarsdb::films_planets,
+      films_vehicles = starwarsdb::films_vehicles
     )
   }
   if (!isTRUE(configure_dm)) return(x)
@@ -33,8 +40,8 @@ starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
 }
 
 #' @describeIn starwars_dm Configure the starwars \pkg{dm} object with primary
-#'   and foreigns keys and colors.
-#' @param dm A \pkg{dm} object with the starwars tables
+#'   and foreign keys and colors.
+#' @param dm A \pkg{dm} object with the starwarsdb tables
 #' @export
 starwars_dm_configure <- function(dm) {
   dm %>%

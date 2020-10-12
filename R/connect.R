@@ -46,13 +46,13 @@ starwars_disconnect <- function(con) {
   DBI::dbDisconnect(con, shutdown = TRUE)
 }
 
-#' @describeIn starwars_db Returns the path to the stwarwars database
+#' @describeIn starwars_db Returns the path to the starwarsdb database
 #' @export
 starwars_db <- function() {
-  temp_db <- tempfile("starwars")
+  temp_db <- tempfile("starwarsdb")
   dir.create(temp_db)
   file.copy(
-    dir(system.file("db", package = "starwars"), full.names = TRUE),
+    dir(system.file("db", package = "starwarsdb"), full.names = TRUE),
     temp_db
   )
   file.path(temp_db, "starwars.duckdb")

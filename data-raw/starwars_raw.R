@@ -1,4 +1,4 @@
-## code to prepare `starwars` dataset goes here
+# Prepare `starwarsdb` data
 
 library(tidyverse)
 # remotes::install_github("gadenbuie/rwars@dev")

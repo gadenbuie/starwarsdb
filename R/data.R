@@ -49,8 +49,8 @@
 #'   \item{\code{diameter}}{The diameter of this planet in kilometers.}
 #'   \item{\code{climate}}{The climate of this planet. Comma-seperated if diverse.}
 #'   \item{\code{gravity}}{A number denoting the gravity of this planet. Where 1 is normal.}
-#'   \item{\code{terrain}}{the terrain of this planet. Comma-seperated if diverse.}
-#'   \item{\code{surface_water}}{The percentage of the planet surface that is naturally occuring water or bodies of water.}
+#'   \item{\code{terrain}}{The terrain of this planet. Comma-seperated if diverse.}
+#'   \item{\code{surface_water}}{The percentage of the planet surface that is naturally occurring water or bodies of water.}
 #'   \item{\code{population}}{The average population of sentient beings inhabiting this planet.}
 #' }
 "planets"
@@ -158,7 +158,7 @@
 #' and `vehicles/` endpoint into a single table. Both API endpoints returned a
 #' "pilots" property, which is described in the schema as an array of people
 #' who piloted the vehicle. The information in this property has been extracted
-#' into a separate table called `pilots` in the \pkg{starwars} package.
+#' into a separate table called `pilots` in the \pkg{starwarsdb} package.
 #'
 #' @template swapi
 #' @format A data frame with 5 rows and 4 variables:

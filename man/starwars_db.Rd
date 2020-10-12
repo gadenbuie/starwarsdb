@@ -29,7 +29,7 @@ database using \code{\link[DBI:dbConnect]{DBI::dbConnect()}} and \code{\link[duc
 
 \item \code{starwars_disconnect}: Disconnect from the DuckDB database
 
-\item \code{starwars_db}: Returns the path to the stwarwars database
+\item \code{starwars_db}: Returns the path to the starwarsdb database
 }}
 
 \examples{

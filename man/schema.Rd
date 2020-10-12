@@ -24,7 +24,7 @@ refactored into separate tables. For example, I combined the \verb{starships/}
 and \verb{vehicles/} endpoint into a single table. Both API endpoints returned a
 "pilots" property, which is described in the schema as an array of people
 who piloted the vehicle. The information in this property has been extracted
-into a separate table called \code{pilots} in the \pkg{starwars} package.
+into a separate table called \code{pilots} in the \pkg{starwarsdb} package.
 }
 \references{
 \url{https://swapi.dev/}

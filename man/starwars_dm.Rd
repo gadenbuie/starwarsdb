@@ -17,20 +17,28 @@ completely configured with all of the primary and foreign keys. Set to
 \item{remote}{If \code{TRUE}, uses the internal DuckDB database rather than local
 tables, which is the default.}
 
-\item{dm}{A \pkg{dm} object with the starwars tables}
+\item{dm}{A \pkg{dm} object with the starwarsdb tables}
 }
 \value{
 A \pkg{dm} object
 }
 \description{
-Creates a \pkg{dm} object with the starwars tables.
+Creates a \pkg{dm} object with the starwarsdb tables.
 }
 \section{Functions}{
 \itemize{
 \item \code{starwars_dm_configure}: Configure the starwars \pkg{dm} object with primary
-and foreigns keys and colors.
+and foreign keys and colors.
 }}
 
+\examples{
+# Create a full starwars {dm} object from local tables
+starwars_dm(remote = TRUE)
+
+# Create a base starwars {dm} object from remote tables wihout keys
+starwars_dm(configure_dm = FALSE, remote = TRUE)
+
+}
 \seealso{
 \code{\link[dm:dm]{dm::dm()}}, \code{\link[dm:dm_add_pk]{dm::dm_add_pk()}}, \code{\link[dm:dm_add_fk]{dm::dm_add_fk()}}, \code{\link[dm:dm_from_src]{dm::dm_from_src()}}
 }

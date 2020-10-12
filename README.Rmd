@@ -19,12 +19,12 @@ knitr::opts_chunk$set(
 [dm]: https://krlmlr.github.io/dm/
 [duckdb]: https://duckdb.org
 
-# starwars
+# starwarsdb
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-`starwars` provides data from the [Star Wars API][swapi] as a set of relational tables, or as an in-package [DuckDB] database.
+**starwarsdb** provides data from the [Star Wars API][swapi] as a set of relational tables, or as an in-package [DuckDB] database.
 
 ![](`r knitr::fig_chunk("starwars-data-model", "png")`)
 
@@ -37,15 +37,15 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install `starwars` from GitHub with [remotes](https://remotes.r-lib.org):
+You can install **starwarsdb** from GitHub with [remotes](https://remotes.r-lib.org):
 
 ``` r
 # install.packages("remotes")
 
-remotes::install_github("gadenbuie/starwars")
+remotes::install_github("gadenbuie/starwarsdb")
 
 # For remotes <= 2.1.0
-remotes::install_github("gadenbuie/starwars@main")
+remotes::install_github("gadenbuie/starwarsdb@main")
 ```
 
 ## Star Wars Data
@@ -54,17 +54,17 @@ remotes::install_github("gadenbuie/starwars@main")
 library(tibble)
 ```
 
-All of the tables are available when you load `starwars`
+All of the tables are available when you load **starwarsdb**
 
 ```{r message=FALSE, warning=FALSE}
 library(dplyr)
-library(starwars)
+library(starwarsdb)
 ```
 
 or via
 
 ```{r eval=FALSE}
-data(package = "starwars")
+data(package = "starwarsdb")
 ```
 
 The `schema` table includes information about the tables that were sourced from [SWAPI].
@@ -92,7 +92,7 @@ people %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 
 ## Remote Tables
 
-`starwars` also includes the entire data set as a DuckDB database,
+**starwarsdb** also includes the entire data set as a DuckDB database,
 appropriate for teaching and practicing remote database access with [dbplyr].
 
 ```{r}
@@ -110,7 +110,7 @@ people_rmt %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 
 ## DM Tables
 
-Finally, `starwars` provides a function that returns a pre-configured [dm] object.
+Finally, **starwarsdb** provides a function that returns a pre-configured [dm] object.
 The `dm` package wraps local data frames into a complete relational data model.
 
 ```{r dm-tables}

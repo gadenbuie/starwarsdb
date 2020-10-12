@@ -1,6 +1,6 @@
 #' Relational Data from the Star Wars API for Learning and Teaching
 #'
-#' \pkg{starwars} provides tables about the films, characters, planets and
+#' \pkg{starwarsdb} provides tables about the films, characters, planets and
 #' vehicles in the Star Wars movie franchise universe. The package and the
 #' tables have been organized to facilitate learning relational database
 #' concepts, like joins. It also includes functions that connect to a local

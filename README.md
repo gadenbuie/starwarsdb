@@ -1,14 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# starwars
+# starwarsdb
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-`starwars` provides data from the [Star Wars API](https://swapi.dev) as
-a set of relational tables, or as an in-package
+**starwarsdb** provides data from the [Star Wars API](https://swapi.dev)
+as a set of relational tables, or as an in-package
 [DuckDB](https://duckdb.org) database.
 
 ![](man/figures/README-starwars-data-model-1.png)
@@ -19,31 +19,31 @@ a set of relational tables, or as an in-package
 
 ## Installation
 
-You can install `starwars` from GitHub with
+You can install **starwarsdb** from GitHub with
 [remotes](https://remotes.r-lib.org):
 
 ``` r
 # install.packages("remotes")
 
-remotes::install_github("gadenbuie/starwars")
+remotes::install_github("gadenbuie/starwarsdb")
 
 # For remotes <= 2.1.0
-remotes::install_github("gadenbuie/starwars@main")
+remotes::install_github("gadenbuie/starwarsdb@main")
 ```
 
 ## Star Wars Data
 
-All of the tables are available when you load `starwars`
+All of the tables are available when you load **starwarsdb**
 
 ``` r
 library(dplyr)
-library(starwars)
+library(starwarsdb)
 ```
 
 or via
 
 ``` r
-data(package = "starwars")
+data(package = "starwarsdb")
 ```
 
 The `schema` table includes information about the tables that were
@@ -113,7 +113,7 @@ people %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 
 ## Remote Tables
 
-`starwars` also includes the entire data set as a DuckDB database,
+**starwarsdb** also includes the entire data set as a DuckDB database,
 appropriate for teaching and practicing remote database access with
 [dbplyr](https://dbplyr.tidyverse.org/).
 
@@ -164,16 +164,16 @@ people_rmt %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 
 ## DM Tables
 
-Finally, `starwars` provides a function that returns a pre-configured
-[dm](https://krlmlr.github.io/dm/) object. The `dm` package wraps local
-data frames into a complete relational data model.
+Finally, **starwarsdb** provides a function that returns a
+pre-configured [dm](https://krlmlr.github.io/dm/) object. The `dm`
+package wraps local data frames into a complete relational data model.
 
 ``` r
 library(dm, warn.conflicts = FALSE)
 
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ───────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 57
 #> Primary keys: 5
