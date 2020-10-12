@@ -13,14 +13,20 @@
 #'   dbdir = starwars_db(),
 #'   read_only = TRUE
 #' )
-#' dplyr::tbl(con, "films")
+#'
+#' if (requireNamespace("dplyr", quietly = TRUE)) {
+#'   dplyr::tbl(con, "films")
+#' }
 #'
 #' # Disconnect from that database (shutdown is specific to duckdb)
 #' DBI::dbDisconnect(con, shutdown = TRUE)
 #'
 #' # Or connect without worrying about connection details
 #' con <- starwars_connect()
-#' dplyr::tbl(con, "films")
+#'
+#' if (requireNamespace("dplyr", quietly = TRUE)) {
+#'   dplyr::tbl(con, "films")
+#' }
 #'
 #' # Similarly, disconnect quickly without worrying about duckdb arguments
 #' starwars_disconnect(con)
