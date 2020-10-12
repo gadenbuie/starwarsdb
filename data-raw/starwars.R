@@ -152,10 +152,33 @@ replace_lookup <- function(x, y, x_col, y_ref, y_replacement) {
     rename(!!x_col := .replacement)
 }
 
+# Sourced from dplyr/data-raw/starwars.R to replicate sex/gender columns
+# https://github.com/tidyverse/dplyr/blob/4c58f65db6599b662df50525cb3dde1d10af144f/data-raw/starwars.R#L62-L69
+genders <- c(
+  "C-3PO" = "masculine",  # https://starwars.fandom.com/wiki/C-3PO
+  "BB8" = "masculine",    # https://starwars.fandom.com/wiki/BB-8
+  "IG-88" = "masculine",  # https://starwars.fandom.com/wiki/IG-88
+  "R5-D4" = "masculine",  # https://starwars.fandom.com/wiki/R5-D4
+  "R2-D2" = "masculine",  # https://starwars.fandom.com/wiki/R2-D2
+  "R4-P17" = "feminine",  # https://starwars.fandom.com/wiki/R4-P17
+  "Jabba Desilijic Tiure" = "masculine" # https://starwars.fandom.com/wiki/Jabba_Desilijic_Tiure
+)
+
 starwars$people <-
   starwars$people %>%
   replace_lookup(starwars$planets, "homeworld", "id", "name") %>%
-  replace_lookup(starwars$species, "species", "id", "name")
+  replace_lookup(starwars$species, "species", "id", "name") %>%
+  mutate(
+    sex = gender,
+    sex = ifelse(sex == "hermaphrodite", "hermaphroditic", sex),
+    species = ifelse(name == "R4-P17", "Droid", species), # R4-P17 is a droid
+    sex = ifelse(species == "Droid", "none", sex),        # Droids don't have biological sex
+    gender = case_when(
+      sex == "male" ~ "masculine",
+      sex == "female" ~ "feminine",
+      TRUE ~ unname(genders[name])
+    )
+  )
 
 starwars <-
   starwars %>%

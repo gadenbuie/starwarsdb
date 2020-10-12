@@ -29,9 +29,10 @@
 #'   \item{\code{skin_color}}{The skin color of this person.}
 #'   \item{\code{eye_color}}{The eye color of this person.}
 #'   \item{\code{birth_year}}{The birth year of this person. BBY (Before the Battle of Yavin) or ABY (After the Battle of Yavin).}
-#'   \item{\code{gender}}{The gender of this person (if known).}
-#'   \item{\code{homeworld}}{The planet resource that this person was born on.}
-#'   \item{\code{species}}{The species resource that this person is.}
+#'   \item{\code{sex}}{The biological sex of the character. One of `male`, `female`, `hermaphroditic`, or `none`.}
+#'   \item{\code{gender}}{The gender role or gender identity of the character.}
+#'   \item{\code{homeworld}}{The planet the character was born on.}
+#'   \item{\code{species}}{The species of the character.}
 #' }
 "people"
 
