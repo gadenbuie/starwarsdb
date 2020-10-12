@@ -101,14 +101,14 @@ x_wing_pilots
 #> 4 Jek Tono Porkins  X-wing
 
 people %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
-#> # A tibble: 4 x 10
+#> # A tibble: 4 x 11
 #>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
 #>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
-#> 1 Luke…    172    77 blond      fair       blue              19 male   Tatooine 
-#> 2 Bigg…    183    84 black      light      brown             24 male   Tatooine 
-#> 3 Wedg…    170    77 brown      fair       hazel             21 male   Corellia 
-#> 4 Jek …    180   110 brown      fair       blue              NA male   Bestine …
-#> # … with 1 more variable: species <chr>
+#> 1 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> # … with 2 more variables: species <chr>, sex <chr>
 ```
 
 ## Remote Tables
@@ -151,15 +151,15 @@ x_wing_pilots
 #> 4 Jek Tono Porkins  X-wing
 
 people_rmt %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
-#> # Source:   lazy query [?? x 10]
+#> # Source:   lazy query [?? x 11]
 #> # Database: duckdb_connection
 #>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
 #>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
-#> 1 Luke…    172    77 blond      fair       blue              19 male   Tatooine 
-#> 2 Bigg…    183    84 black      light      brown             24 male   Tatooine 
-#> 3 Wedg…    170    77 brown      fair       hazel             21 male   Corellia 
-#> 4 Jek …    180   110 brown      fair       blue              NA male   Bestine …
-#> # … with 1 more variable: species <chr>
+#> 1 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> # … with 2 more variables: species <chr>, sex <chr>
 ```
 
 ## DM Tables
@@ -173,9 +173,9 @@ library(dm, warn.conflicts = FALSE)
 
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ────────────────────────────────────────────────────────────────────
+#> ── Metadata ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
-#> Columns: 57
+#> Columns: 58
 #> Primary keys: 5
 #> Foreign keys: 10
 
@@ -186,14 +186,14 @@ sw_dm %>%
   dm_zoom_to("people") %>%
   semi_join(pilots)
 #> # Zoomed table: people
-#> # A tibble:     4 x 10
+#> # A tibble:     4 x 11
 #>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
 #>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
-#> 1 Luke…    172    77 blond      fair       blue              19 male   Tatooine 
-#> 2 Bigg…    183    84 black      light      brown             24 male   Tatooine 
-#> 3 Wedg…    170    77 brown      fair       hazel             21 male   Corellia 
-#> 4 Jek …    180   110 brown      fair       blue              NA male   Bestine …
-#> # … with 1 more variable: species <chr>
+#> 1 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> # … with 2 more variables: species <chr>, sex <chr>
 ```
 
 ``` r

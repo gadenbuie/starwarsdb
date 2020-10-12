@@ -1,14 +1,14 @@
 Package: starwarsdb
-Title: Relational Data from the Star Wars API for Learning and
+Title: Relational Data from the 'Star Wars API' for Learning and
     Teaching
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Garrick",
            family = "Aden-Buie",
            role = c("aut", "cre"),
            email = "garrick@adenbuie.com",
            comment = c(ORCID = "0000-0002-7111-0077"))
-Description: Provides data about the Star Wars movie franchise
+Description: Provides data about the 'Star Wars' movie franchise
     in a set of relational tables or as a complete 'DuckDB' database. All
     data was collected from the open source 'Star Wars API'.
 License: MIT + file LICENSE
