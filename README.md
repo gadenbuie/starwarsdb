@@ -5,6 +5,10 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/starwarsdb)](https://CRAN.R-project.org/package=starwarsdb)
+[![CI by
+{tic}](https://github.com/gadenbuie/starwarsdb/workflows/CI%20by%20%7Btic%7D/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions)
 <!-- badges: end -->
 
 **starwarsdb** provides data from the [Star Wars API](https://swapi.dev)
@@ -173,7 +177,7 @@ library(dm, warn.conflicts = FALSE)
 
 sw_dm <- starwars_dm()
 sw_dm
-#> ── Metadata ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Metadata ────────────────────────────────────────────────────────────────────
 #> Tables: `films`, `people`, `planets`, `species`, `vehicles`, … (9 total)
 #> Columns: 58
 #> Primary keys: 5
