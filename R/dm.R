@@ -23,7 +23,7 @@
 #' @seealso [dm::dm()], [dm::dm_add_pk()], [dm::dm_add_fk()], [dm::dm_from_src()]
 #' @export
 starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
-  requires_dm()
+  requires_dm("starwars_dm()")
 
   x <- if (isTRUE(remote)) {
     dm::dm_from_src(starwars_connect(), learn_keys = FALSE)
@@ -49,7 +49,7 @@ starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
 #' @param dm A \pkg{dm} object with the starwarsdb tables
 #' @export
 starwars_dm_configure <- function(dm) {
-  requires_dm()
+  requires_dm("starwars_dm_configure()")
 
   dm %>%
     dm::dm_add_pk("films", "title") %>%
@@ -76,9 +76,11 @@ starwars_dm_configure <- function(dm) {
     )
 }
 
-requires_dm <- function() {
+requires_dm <- function(fn = NULL) {
   if (!has_dm()) {
-    stop("`dm` is required: install.packages('dm')")
+    msg <- "requires the {dm} package: install.packages('dm')"
+    if (!is.null(fn)) msg <- paste(fn, msg)
+    stop(msg, call. = is.null(fn))
   }
 }
 
