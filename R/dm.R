@@ -11,17 +11,22 @@
 #' @return A \pkg{dm} object
 #'
 #' @examples
-#' # Create a full starwars {dm} object from local tables
-#' starwars_dm(remote = TRUE)
+#' # If the {dm} package is installed...
+#' if (requireNamespace("dm", quietly = TRUE)) {
+#'   # Create a full starwars {dm} object from local tables
+#'   starwars_dm(remote = TRUE)
 #'
-#' # Create a base starwars {dm} object from remote tables wihout keys
-#' starwars_dm(configure_dm = FALSE, remote = TRUE)
+#'   # Create a base starwars {dm} object from remote tables wihout keys
+#'   starwars_dm(configure_dm = FALSE, remote = TRUE)
+#' }
 #'
 #' @seealso [dm::dm()], [dm::dm_add_pk()], [dm::dm_add_fk()], [dm::dm_from_src()]
 #' @export
 starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
+  requires_dm()
+
   x <- if (isTRUE(remote)) {
-    dm::dm_from_src(starwars_connect())
+    dm::dm_from_src(starwars_connect(), learn_keys = FALSE)
   } else {
     dm::dm(
       films = starwarsdb::films,
@@ -44,6 +49,8 @@ starwars_dm <- function(configure_dm = TRUE, remote = FALSE) {
 #' @param dm A \pkg{dm} object with the starwarsdb tables
 #' @export
 starwars_dm_configure <- function(dm) {
+  requires_dm()
+
   dm %>%
     dm::dm_add_pk("films", "title") %>%
     dm::dm_add_pk("people", "name") %>%
@@ -67,4 +74,14 @@ starwars_dm_configure <- function(dm) {
       "#71503E" = "vehicles",
       "#BC4610" = "planets"
     )
+}
+
+requires_dm <- function() {
+  if (!has_dm()) {
+    stop("`dm` is required: install.packages('dm')")
+  }
+}
+
+has_dm <- function() {
+  requireNamespace("dm", quietly = TRUE)
 }

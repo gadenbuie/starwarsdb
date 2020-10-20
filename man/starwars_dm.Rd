@@ -32,11 +32,14 @@ and foreign keys and colors.
 }}
 
 \examples{
-# Create a full starwars {dm} object from local tables
-starwars_dm(remote = TRUE)
+# If the {dm} package is installed...
+if (requireNamespace("dm", quietly = TRUE)) {
+  # Create a full starwars {dm} object from local tables
+  starwars_dm(remote = TRUE)
 
-# Create a base starwars {dm} object from remote tables wihout keys
-starwars_dm(configure_dm = FALSE, remote = TRUE)
+  # Create a base starwars {dm} object from remote tables wihout keys
+  starwars_dm(configure_dm = FALSE, remote = TRUE)
+}
 
 }
 \seealso{
