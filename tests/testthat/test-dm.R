@@ -55,6 +55,10 @@ test_that("starwars_dm remote unconfigured", {
 test_that("starwars_dm requires {dm}", {
   testthat::with_mock(
     "starwarsdb::has_dm" = function(...) FALSE,
-    expect_error(starwars_dm())
+    expect_error(starwars_dm(), "starwars_dm.+requires.+dm")
+  )
+  testthat::with_mock(
+    "starwarsdb::has_dm" = function(...) FALSE,
+    expect_error(requires_dm(), "requires the.+dm")
   )
 })
