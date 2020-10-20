@@ -49,7 +49,11 @@ starwars_connect <- function() {
 #' @describeIn starwars_db Disconnect from the DuckDB database
 #' @export
 starwars_disconnect <- function(con) {
+  was_valid <- DBI::dbIsValid(con)
   DBI::dbDisconnect(con, shutdown = TRUE)
+  if (inherits(con, "duckdb_connection") && was_valid) {
+    unlink(dirname(con@driver@dbdir), recursive = TRUE)
+  }
 }
 
 #' @describeIn starwars_db Returns the path to the starwarsdb database
