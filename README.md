@@ -23,8 +23,14 @@ as a set of relational tables, or as an in-package
 
 ## Installation
 
-You can install **starwarsdb** from GitHub with
-[remotes](https://remotes.r-lib.org):
+You can install **starwarsdb** from CRAN:
+
+``` r
+install.packages("starwarsdb")
+```
+
+Or you can install the development version of **starwarsdb** from GitHub
+with [remotes](https://remotes.r-lib.org):
 
 ``` r
 # install.packages("remotes")
