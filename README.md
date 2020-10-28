@@ -210,4 +210,4 @@ dm_draw(sw_dm)
 
 For API access from R, check out the
 [rwars](https://github.com/Ironholds/rwars) package by Oliver Keyes. Big
-thanks to `rwars` for making it easy to access the Star Wars API\!
+thanks to `rwars` for making it easy to access the Star Wars API!
