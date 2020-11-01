@@ -6,13 +6,19 @@
 \alias{starwars_disconnect}
 \title{Connect to the Star Wars Database}
 \usage{
-starwars_connect()
+starwars_connect(dbdir = ":memory:", ...)
 
 starwars_disconnect(con)
 
 starwars_db()
 }
 \arguments{
+\item{dbdir}{Location for database files. Should be a path to an existing
+directory in the file system. With the default, all
+data is kept in RAM}
+
+\item{...}{Additional parameters passed to \code{\link[DBI:dbConnect]{DBI::dbConnect()}}}
+
 \item{con}{A connection to the Star Wars database}
 }
 \value{
