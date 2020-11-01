@@ -37,13 +37,22 @@ NULL
 
 
 #' @describeIn starwars_db Connect to the DuckDB database
+#' @inheritParams duckdb::`dbConnect,duckdb_driver-method`
+#' @param ... Additional parameters passed to [DBI::dbConnect()]
 #' @export
-starwars_connect <- function() {
-  DBI::dbConnect(
-    duckdb::duckdb(),
-    dbdir = starwars_db(),
-    read_only = TRUE
-  )
+starwars_connect <- function(dbdir = ":memory:", ...) {
+  con <- DBI::dbConnect(duckdb::duckdb(), dbdir = dbdir, ...)
+  tables <- starwarsdb_tables()
+  for (table in names(tables)) {
+    DBI::dbWriteTable(
+      con,
+      name = table,
+      value = as.data.frame(tables[[table]]),
+      temporary = FALSE,
+      overwrite = TRUE
+    )
+  }
+  con
 }
 
 #' @describeIn starwars_db Disconnect from the DuckDB database
@@ -52,7 +61,9 @@ starwars_disconnect <- function(con) {
   was_valid <- DBI::dbIsValid(con)
   DBI::dbDisconnect(con, shutdown = TRUE)
   if (inherits(con, "duckdb_connection") && was_valid) {
-    unlink(dirname(con@driver@dbdir), recursive = TRUE)
+    if (!identical(con@driver@dbdir, ":memory:") && file.exists(con@driver@dbdir)) {
+      unlink(dirname(con@driver@dbdir), recursive = TRUE)
+    }
   }
 }
 
@@ -61,9 +72,8 @@ starwars_disconnect <- function(con) {
 starwars_db <- function() {
   temp_db <- tempfile("starwarsdb")
   dir.create(temp_db)
-  file.copy(
-    dir(system.file("db", package = "starwarsdb"), full.names = TRUE),
-    temp_db
-  )
-  file.path(temp_db, "starwars.duckdb")
+  dbdir <- file.path(temp_db, "starwars.duckdb")
+  con <- starwars_connect(dbdir = dbdir)
+  DBI::dbDisconnect(con, shutdown = TRUE)
+  dbdir
 }
