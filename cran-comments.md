@@ -1,10 +1,8 @@
-## Resubmission
-This is a resubmission. In this version I have:
+## Submission Notes
 
-* Corrected quotes around 'Star Wars' API
-* Added a web reference to the API in the description in DESCRIPTION
-* Added a formal test suite
-* Moved {dm} from "Imports" to "Suggests" and updated examples accordingly
+This package was just released on CRAN on 2020-10-28. This update fixes features
+that will be broken by an upcoming release of {duckdb} (>= 0.2.2) that was
+discovered during {duckdb} reverse dependency checks.
 
 ## Test environments
 * local R installation, R 4.0.2
@@ -15,6 +13,4 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release.
+0 errors | 0 warnings | 0 notes
