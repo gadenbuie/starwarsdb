@@ -1,3 +1,5 @@
+# starwarsdb (development version)
+
 # starwarsdb 0.1.2
 
 * starwarsdb creates the duckdb database on connection, rather than shipping the
