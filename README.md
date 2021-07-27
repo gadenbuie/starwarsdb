@@ -8,7 +8,7 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/starwarsdb)](https://CRAN.R-project.org/package=starwarsdb)
 [![CI by
-{tic}](https://github.com/gadenbuie/starwarsdb/workflows/CI%20by%20%7Btic%7D/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions)
+{tic}](https://github.com/gadenbuie/starwarsdb/workflows/tic/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions)
 <!-- badges: end -->
 
 **starwarsdb** provides data from the [Star Wars API](https://swapi.dev)
