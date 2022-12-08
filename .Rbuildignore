@@ -8,3 +8,6 @@
 ^\.github$
 ^tic\.R$
 ^CRAN-RELEASE$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

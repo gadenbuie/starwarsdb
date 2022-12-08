@@ -1,0 +1,31 @@
+url: https://pkg.garrickadenbuie.com/starwarsdb
+
+template:
+  package: grkgdown
+
+navbar:
+  components:
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/gadenbuie/starwarsdb
+
+reference:
+- title: Connect to the packaged Star Wars Database
+  contents:
+  - '`starwars_db`'
+  - '`starwars_dm`'
+- title: Tables
+  description: >
+    These tables are included as data in the package so that you can compare
+    local workflows with the same workflow using a database.
+  contents:
+  - '`films`'
+  - '`films_people`'
+  - '`films_planets`'
+  - '`films_vehicles`'
+  - '`people`'
+  - '`pilots`'
+  - '`planets`'
+  - '`schema`'
+  - '`species`'
+  - '`vehicles`'

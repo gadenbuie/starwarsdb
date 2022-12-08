@@ -23,12 +23,12 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/starwarsdb)](https://CRAN.R-project.org/package=starwarsdb)
-[![tic status](https://github.com/gadenbuie/starwarsdb/workflows/tic/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions)
+[![R-CMD-check](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **starwarsdb** provides data from the [Star Wars API][swapi] as a set of relational tables, or as an in-package [DuckDB] database.
 
-![](`r knitr::fig_chunk("starwars-data-model", "png")`)
+![](man/figures/README-starwars-data-model-1.svg)
 
 **Formats:** 
 [Metadata](#star-wars-data),
@@ -129,14 +129,22 @@ sw_dm
 
 sw_dm %>%
   dm_select_tbl(pilots, people) %>%
-  dm_filter("pilots", vehicle == "X-wing") %>%
-  dm_apply_filters() %>%
+  dm_filter(pilots = vehicle == "X-wing") %>%
   dm_zoom_to("people") %>%
   semi_join(pilots)
 ```
 
-```{r starwars-data-model}
+```{r starwars-data-model, eval = FALSE, echo = TRUE}
 dm_draw(sw_dm)
+```
+
+![](man/figures/README-starwars-data-model-1.svg)
+
+```{r starwars-data-model-write, echo = FALSE, eval = TRUE}
+sw_dm %>%
+  dm_draw(graph_attrs = 'bgcolor="transparent"', node_attrs = 'fontname="Helvetica"') %>%
+  DiagrammeRsvg::export_svg() %>%
+  writeLines("man/figures/README-starwars-data-model-1.svg")
 ```
 
 ## API
