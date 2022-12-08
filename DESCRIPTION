@@ -27,6 +27,7 @@ Suggests:
     dm,
     dplyr,
     testthat
+Config/Needs/website: any::DiagrammeR, any::DiagrammeRSvg
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
