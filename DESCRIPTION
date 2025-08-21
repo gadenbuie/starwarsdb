@@ -1,24 +1,24 @@
 Package: starwarsdb
 Title: Relational Data from the 'Star Wars' API for Learning and Teaching
 Version: 0.1.3
-Authors@R: 
+Authors@R:
     person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7111-0077"))
 Description: Provides data about the 'Star Wars' movie franchise in a set
     of relational tables or as a complete 'DuckDB' database. All data was
-    collected from the open source 'Star Wars' API <https://swapi.dev/>.
+    collected from the open source 'Star Wars' API.
 License: MIT + file LICENSE
 URL: https://github.com/gadenbuie/starwarsdb,
-    https://pkg.garrickadenbuie.com/starwarsdb
+    https://pkg.garrickadenbuie.com/starwarsdb/
 BugReports: https://github.com/gadenbuie/starwarsdb/issues
-Depends: 
+Depends:
     R (>= 2.10)
 Imports:
     DBI,
     duckdb,
     magrittr,
     tibble
-Suggests: 
+Suggests:
     dbplyr,
     dm,
     dplyr,
@@ -28,4 +28,4 @@ Config/Needs/website: any::DiagrammeR, any::DiagrammeRsvg,
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2

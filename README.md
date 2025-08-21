@@ -10,8 +10,8 @@ status](https://www.r-pkg.org/badges/version/starwarsdb)](https://CRAN.R-project
 [![R-CMD-check](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-**starwarsdb** provides data from the [Star Wars API](https://swapi.dev)
-as a set of relational tables, or as an in-package
+**starwarsdb** provides data from the (now defunct) **Star Wars API** as
+a set of relational tables, or as an in-package
 [DuckDB](https://duckdb.org) database.
 
 ![](man/figures/README-starwars-data-model-1.svg)
@@ -56,7 +56,7 @@ data(package = "starwarsdb")
 ```
 
 The `schema` table includes information about the tables that were
-sourced from [SWAPI](https://swapi.dev).
+sourced from SWAPI.
 
 ``` r
 schema
@@ -71,8 +71,8 @@ schema
 ```
 
 ``` r
-schema %>% 
-  filter(endpoint == "films") %>% 
+schema %>%
+  filter(endpoint == "films") %>%
   pull(properties)
 #> [[1]]
 #> # A tibble: 14 × 4
@@ -111,14 +111,13 @@ x_wing_pilots
 
 people %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
 #> # A tibble: 4 × 11
-#>   name       height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ gender homew…⁵ species
-#>   <chr>       <dbl> <dbl> <chr>   <chr>   <chr>     <dbl> <chr>  <chr>   <chr>  
-#> 1 Luke Skyw…    172    77 blond   fair    blue         19 mascu… Tatooi… Human  
-#> 2 Biggs Dar…    183    84 black   light   brown        24 mascu… Tatooi… Human  
-#> 3 Wedge Ant…    170    77 brown   fair    hazel        21 mascu… Corell… Human  
-#> 4 Jek Tono …    180   110 brown   fair    blue         NA mascu… Bestin… Human  
-#> # … with 1 more variable: sex <chr>, and abbreviated variable names
-#> #   ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+#>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
+#>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
+#> 1 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> # ℹ 2 more variables: species <chr>, sex <chr>
 ```
 
 ## Remote Tables
@@ -134,7 +133,7 @@ people_rmt <- tbl(con, "people")
 pilots_rmt <- tbl(con, "pilots")
 pilots_rmt
 #> # Source:   table<pilots> [?? x 2]
-#> # Database: DuckDB 0.6.1 [root@Darwin 22.1.0:R 4.2.2/:memory:]
+#> # Database: DuckDB v1.3.2 [root@Darwin 24.5.0:R 4.4.3/:memory:]
 #>    pilot             vehicle          
 #>    <chr>             <chr>            
 #>  1 Chewbacca         Millennium Falcon
@@ -147,12 +146,12 @@ pilots_rmt
 #>  8 Jek Tono Porkins  X-wing           
 #>  9 Darth Vader       TIE Advanced x1  
 #> 10 Boba Fett         Slave 1          
-#> # … with more rows
+#> # ℹ more rows
 
 x_wing_pilots <- pilots_rmt %>% filter(vehicle == "X-wing")
 x_wing_pilots
-#> # Source:   SQL [4 x 2]
-#> # Database: DuckDB 0.6.1 [root@Darwin 22.1.0:R 4.2.2/:memory:]
+#> # Source:   SQL [?? x 2]
+#> # Database: DuckDB v1.3.2 [root@Darwin 24.5.0:R 4.4.3/:memory:]
 #>   pilot             vehicle
 #>   <chr>             <chr>  
 #> 1 Luke Skywalker    X-wing 
@@ -161,16 +160,15 @@ x_wing_pilots
 #> 4 Jek Tono Porkins  X-wing
 
 people_rmt %>% semi_join(x_wing_pilots, by = c(name = "pilot"))
-#> # Source:   SQL [4 x 11]
-#> # Database: DuckDB 0.6.1 [root@Darwin 22.1.0:R 4.2.2/:memory:]
-#>   name       height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ gender homew…⁵ species
-#>   <chr>       <dbl> <dbl> <chr>   <chr>   <chr>     <dbl> <chr>  <chr>   <chr>  
-#> 1 Luke Skyw…    172    77 blond   fair    blue         19 mascu… Tatooi… Human  
-#> 2 Biggs Dar…    183    84 black   light   brown        24 mascu… Tatooi… Human  
-#> 3 Wedge Ant…    170    77 brown   fair    hazel        21 mascu… Corell… Human  
-#> 4 Jek Tono …    180   110 brown   fair    blue         NA mascu… Bestin… Human  
-#> # … with 1 more variable: sex <chr>, and abbreviated variable names
-#> #   ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+#> # Source:   SQL [?? x 11]
+#> # Database: DuckDB v1.3.2 [root@Darwin 24.5.0:R 4.4.3/:memory:]
+#>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
+#>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
+#> 1 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 4 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> # ℹ 2 more variables: species <chr>, sex <chr>
 ```
 
 ## DM Tables
@@ -197,14 +195,13 @@ sw_dm %>%
   semi_join(pilots)
 #> # Zoomed table: people
 #> # A tibble:     4 × 11
-#>   name       height  mass hair_…¹ skin_…² eye_c…³ birth…⁴ gender homew…⁵ species
-#>   <chr>       <dbl> <dbl> <chr>   <chr>   <chr>     <dbl> <chr>  <chr>   <chr>  
-#> 1 Luke Skyw…    172    77 blond   fair    blue         19 mascu… Tatooi… Human  
-#> 2 Biggs Dar…    183    84 black   light   brown        24 mascu… Tatooi… Human  
-#> 3 Wedge Ant…    170    77 brown   fair    hazel        21 mascu… Corell… Human  
-#> 4 Jek Tono …    180   110 brown   fair    blue         NA mascu… Bestin… Human  
-#> # … with 1 more variable: sex <chr>, and abbreviated variable names
-#> #   ¹​hair_color, ²​skin_color, ³​eye_color, ⁴​birth_year, ⁵​homeworld
+#>   name  height  mass hair_color skin_color eye_color birth_year gender homeworld
+#>   <chr>  <dbl> <dbl> <chr>      <chr>      <chr>          <dbl> <chr>  <chr>    
+#> 1 Luke…    172    77 blond      fair       blue              19 mascu… Tatooine 
+#> 2 Bigg…    183    84 black      light      brown             24 mascu… Tatooine 
+#> 3 Wedg…    170    77 brown      fair       hazel             21 mascu… Corellia 
+#> 4 Jek …    180   110 brown      fair       blue              NA mascu… Bestine …
+#> # ℹ 2 more variables: species <chr>, sex <chr>
 ```
 
 ``` r

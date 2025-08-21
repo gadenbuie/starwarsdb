@@ -26,11 +26,11 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/starwarsdb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-**starwarsdb** provides data from the [Star Wars API][swapi] as a set of relational tables, or as an in-package [DuckDB] database.
+**starwarsdb** provides data from the (now defunct) **Star Wars API** as a set of relational tables, or as an in-package [DuckDB] database.
 
 ![](man/figures/README-starwars-data-model-1.svg)
 
-**Formats:** 
+**Formats:**
 [Metadata](#star-wars-data),
 [Local Tables](#local-tables),
 [Remote Tables](#remote-tables),
@@ -75,15 +75,15 @@ or via
 data(package = "starwarsdb")
 ```
 
-The `schema` table includes information about the tables that were sourced from [SWAPI].
+The `schema` table includes information about the tables that were sourced from SWAPI.
 
 ```{r}
 schema
 ```
 
 ```{r}
-schema %>% 
-  filter(endpoint == "films") %>% 
+schema %>%
+  filter(endpoint == "films") %>%
   pull(properties)
 ```
 

@@ -18,6 +18,6 @@ films_people
 Links characters (\code{people}) to the \code{films} in which they appear.
 }
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \keyword{datasets}

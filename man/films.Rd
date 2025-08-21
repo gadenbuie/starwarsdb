@@ -22,6 +22,6 @@ films
 Films in the Star Wars movie franchise.
 }
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \keyword{datasets}

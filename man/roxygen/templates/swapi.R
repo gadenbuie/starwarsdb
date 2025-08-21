@@ -1,1 +1,1 @@
-#' @references <https://swapi.dev/>
+#' @references The Star Wars API (SWAPI).

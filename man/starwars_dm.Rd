@@ -27,10 +27,10 @@ Creates a \pkg{dm} object with the starwarsdb tables.
 }
 \section{Functions}{
 \itemize{
-\item \code{starwars_dm_configure}: Configure the starwars \pkg{dm} object with primary
+\item \code{starwars_dm_configure()}: Configure the starwars \pkg{dm} object with primary
 and foreign keys and colors.
-}}
 
+}}
 \examples{
 # If the {dm} package is installed...
 if (requireNamespace("dm", quietly = TRUE)) {

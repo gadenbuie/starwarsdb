@@ -18,6 +18,6 @@ pilots
 Links \code{people} to the \code{vehicles} they have piloted.
 }
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \keyword{datasets}
