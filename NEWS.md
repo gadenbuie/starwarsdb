@@ -1,4 +1,4 @@
-# starwarsdb (development version)
+# starwarsdb 0.1.3
 
 # starwarsdb 0.1.2
 
