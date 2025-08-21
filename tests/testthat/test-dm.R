@@ -1,4 +1,6 @@
 test_that("starwars_dm local full", {
+  skip_if_not_installed("dm")
+
   dm_local <- starwars_dm()
 
   expect_true(inherits(dm_local, "dm"))
@@ -15,6 +17,8 @@ test_that("starwars_dm local full", {
 })
 
 test_that("starwars_dm local unconfigured", {
+  skip_if_not_installed("dm")
+
   dm_local <- starwars_dm(configure_dm = FALSE)
 
   expect_true(inherits(dm_local, "dm"))
@@ -24,6 +28,8 @@ test_that("starwars_dm local unconfigured", {
 })
 
 test_that("starwars_dm remote full", {
+  skip_if_not_installed("dm")
+
   dm_remote <- starwars_dm(remote = TRUE)
   con <- dm::dm_get_con(dm_remote)
   on.exit(starwars_disconnect(con))
@@ -42,6 +48,8 @@ test_that("starwars_dm remote full", {
 })
 
 test_that("starwars_dm remote unconfigured", {
+  skip_if_not_installed("dm")
+
   dm_remote <- starwars_dm(remote = TRUE, configure_dm = FALSE)
   con <- dm::dm_get_con(dm_remote)
   on.exit(starwars_disconnect(con))
@@ -53,12 +61,9 @@ test_that("starwars_dm remote unconfigured", {
 })
 
 test_that("starwars_dm requires {dm}", {
-  testthat::with_mock(
-    "starwarsdb::has_dm" = function(...) FALSE,
-    expect_error(starwars_dm(), "starwars_dm.+requires.+dm")
+  local_mocked_bindings(
+    has_dm = function(...) FALSE
   )
-  testthat::with_mock(
-    "starwarsdb::has_dm" = function(...) FALSE,
-    expect_error(requires_dm(), "requires the.+dm")
-  )
+  expect_error(starwars_dm(), "starwars_dm.+requires.+dm")
+  expect_error(requires_dm(), "requires the.+dm")
 })
