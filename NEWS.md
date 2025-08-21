@@ -1,5 +1,7 @@
 # starwarsdb 0.1.3
 
+* Small fix in starwarsdb tests to use `testthat::local_mocked_bindings()`.
+
 # starwarsdb 0.1.2
 
 * starwarsdb creates the duckdb database on connection, rather than shipping the
