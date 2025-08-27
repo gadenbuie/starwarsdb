@@ -30,7 +30,7 @@ databases via \pkg{dplyr}, \pkg{DBI}, and \pkg{dm}.
 }
 
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \seealso{
 The \href{https://github.com/Ironholds/rwars}{rwars} package by Oliver

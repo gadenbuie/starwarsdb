@@ -14,8 +14,8 @@ starwars_db()
 }
 \arguments{
 \item{dbdir}{Location for database files. Should be a path to an existing
-directory in the file system. With the default, all
-data is kept in RAM}
+directory in the file system. With the default (or \code{""}), all
+data is kept in RAM.}
 
 \item{...}{Additional parameters passed to \code{\link[DBI:dbConnect]{DBI::dbConnect()}}}
 
@@ -31,13 +31,13 @@ database using \code{\link[DBI:dbConnect]{DBI::dbConnect()}} and \code{\link[duc
 }
 \section{Functions}{
 \itemize{
-\item \code{starwars_connect}: Connect to the DuckDB database
+\item \code{starwars_connect()}: Connect to the DuckDB database
 
-\item \code{starwars_disconnect}: Disconnect from the DuckDB database
+\item \code{starwars_disconnect()}: Disconnect from the DuckDB database
 
-\item \code{starwars_db}: Returns the path to the starwarsdb database
+\item \code{starwars_db()}: Returns the path to the starwarsdb database
+
 }}
-
 \examples{
 # Manually connect using {duckdb} and {DBI}
 con <- DBI::dbConnect(

@@ -164,17 +164,16 @@ starwarsdb_tables <- function() {
 "films_vehicles"
 
 
-
 #' Star Wars Data Schema
 #'
 #' Includes information about the schema of the tables that were sourced from
-#' [SWAPI](https://swapi.dev), the _Star Wars API_. Not all properties returned
-#' from the API are columns in the data in this package: some properties were
-#' refactored into separate tables. For example, I combined the `starships/`
-#' and `vehicles/` endpoint into a single table. Both API endpoints returned a
-#' "pilots" property, which is described in the schema as an array of people
-#' who piloted the vehicle. The information in this property has been extracted
-#' into a separate table called `pilots` in the \pkg{starwarsdb} package.
+#' SWAPI, the _Star Wars API_. Not all properties returned from the API are
+#' columns in the data in this package: some properties were refactored into
+#' separate tables. For example, I combined the `starships/` and `vehicles/`
+#' endpoint into a single table. Both API endpoints returned a "pilots"
+#' property, which is described in the schema as an array of people who piloted
+#' the vehicle. The information in this property has been extracted into a
+#' separate table called `pilots` in the \pkg{starwarsdb} package.
 #'
 #' @template swapi
 #' @format A data frame with 5 rows and 4 variables:

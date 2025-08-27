@@ -30,6 +30,6 @@ vehicles
 A Starship or vehicle in the Star Wars universe.
 }
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \keyword{datasets}

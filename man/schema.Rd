@@ -18,15 +18,15 @@ schema
 }
 \description{
 Includes information about the schema of the tables that were sourced from
-\href{https://swapi.dev}{SWAPI}, the \emph{Star Wars API}. Not all properties returned
-from the API are columns in the data in this package: some properties were
-refactored into separate tables. For example, I combined the \verb{starships/}
-and \verb{vehicles/} endpoint into a single table. Both API endpoints returned a
-"pilots" property, which is described in the schema as an array of people
-who piloted the vehicle. The information in this property has been extracted
-into a separate table called \code{pilots} in the \pkg{starwarsdb} package.
+SWAPI, the \emph{Star Wars API}. Not all properties returned from the API are
+columns in the data in this package: some properties were refactored into
+separate tables. For example, I combined the \verb{starships/} and \verb{vehicles/}
+endpoint into a single table. Both API endpoints returned a "pilots"
+property, which is described in the schema as an array of people who piloted
+the vehicle. The information in this property has been extracted into a
+separate table called \code{pilots} in the \pkg{starwarsdb} package.
 }
 \references{
-\url{https://swapi.dev/}
+The Star Wars API (SWAPI).
 }
 \keyword{datasets}
