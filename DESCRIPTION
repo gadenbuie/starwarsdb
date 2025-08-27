@@ -1,6 +1,6 @@
 Package: starwarsdb
 Title: Relational Data from the 'Star Wars' API for Learning and Teaching
-Version: 0.1.3
+Version: 0.1.3.9000
 Authors@R:
     person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7111-0077"))
