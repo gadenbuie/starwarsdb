@@ -1,66 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/films.html</loc>
-  </url>
-  <url>
-    <loc>/reference/films_people.html</loc>
-  </url>
-  <url>
-    <loc>/reference/films_planets.html</loc>
-  </url>
-  <url>
-    <loc>/reference/films_vehicles.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/people.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pilots.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/planets.html</loc>
-  </url>
-  <url>
-    <loc>/reference/schema.html</loc>
-  </url>
-  <url>
-    <loc>/reference/species.html</loc>
-  </url>
-  <url>
-    <loc>/reference/starwars_db.html</loc>
-  </url>
-  <url>
-    <loc>/reference/starwars_dm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/starwarsdb-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vehicles.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/404.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/LICENSE-text.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/LICENSE.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/authors.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/index.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/news/index.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/films.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/films_people.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/films_planets.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/films_vehicles.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/index.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/people.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/pilots.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/pipe.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/planets.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/schema.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/species.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/starwars_db.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/starwars_dm.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/starwarsdb-package.html</loc></url>
+<url><loc>https://pkg.garrickadenbuie.com/starwarsdb/reference/vehicles.html</loc></url>
 </urlset>
+
